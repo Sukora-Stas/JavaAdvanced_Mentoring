@@ -2,19 +2,14 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>JavaAdvanced_Mentoring</artifactId>
+        <groupId>com.epam</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.epam</groupId>
-    <artifactId>JavaAdvanced_Mentoring</artifactId>
-    <packaging>pom</packaging>
-    <version>1.0-SNAPSHOT</version>
-    <modules>
-        <module>jmp-bank-api</module>
-        <module>jmp-service-api</module>
-        <module>jmp-cloud-bank-impl</module>
-        <module>jmp-cloud-service-impl</module>
-        <module>jmp-dto</module>
-    </modules>
+    <artifactId>jmp.cloud.bank.impl</artifactId>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>

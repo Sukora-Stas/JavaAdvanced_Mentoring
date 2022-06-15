@@ -3,9 +3,12 @@
 # Necessary Tools
 
 Java Development Kit 11+
+
 Apache Maven 3.6.0+
+
 Git 2.24+
-##Task
+
+## Task
 (1-2 stars)
 
 1. Create maven project with 5 modules (see Java 9 modules) :
