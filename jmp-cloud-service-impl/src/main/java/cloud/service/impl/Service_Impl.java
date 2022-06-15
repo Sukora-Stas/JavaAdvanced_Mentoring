@@ -7,6 +7,8 @@ import service.api.IService;
 
 import java.time.LocalDate;
 import java.util.*;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 public class Service_Impl implements IService {
 
@@ -32,6 +34,11 @@ public class Service_Impl implements IService {
 
     @Override
     public List<User> getAllUsers() {
-        return new ArrayList<>(userStorage.keySet());
+        return userStorage.keySet().stream().collect(Collectors.toUnmodifiableList());
+    }
+
+    @Override
+    public List<Subscription> getAllSubscriptionsByCondition(Predicate<Subscription> predicate) {
+        return subscriptions.stream().filter(predicate).collect(Collectors.toUnmodifiableList());
     }
 }
