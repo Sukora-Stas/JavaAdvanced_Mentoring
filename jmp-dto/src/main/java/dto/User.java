@@ -1,11 +1,19 @@
 package dto;
 
 import java.time.LocalDate;
+import java.util.Objects;
 
 public class User {
+
+    public User(String name, String surname, LocalDate birthday) {
+        this.name = name;
+        this.surname = surname;
+        this.birthday = birthday;
+    }
+
     private String name;
     private String surname;
-    private LocalDate birthday;
+    private final LocalDate birthday;
 
     public String getName() {
         return name;
@@ -23,11 +31,25 @@ public class User {
         this.surname = surname;
     }
 
-    public LocalDate getBirthday() {
-        return birthday;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return name.equals(user.name) && surname.equals(user.surname) && birthday.equals(user.birthday);
     }
 
-    public void setBirthday(LocalDate birthday) {
-        this.birthday = birthday;
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, surname, birthday);
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                ", birthday=" + birthday +
+                '}';
     }
 }
